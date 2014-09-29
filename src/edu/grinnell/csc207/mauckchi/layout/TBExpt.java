@@ -18,11 +18,50 @@ public class TBExpt
   {
     // Prepare for input and output
     PrintWriter pen = new PrintWriter(System.out, true);
-    // Create a block to use
+    // Create some blocks to use
     TextBlock block = new TextLine("Hello");
+    TextBlock block1 = new TextLine("Goodbye");
+    TextBlock block2 = new VComposition(block, block1);
     // Print out the block
     TBUtils.print(pen, block);
-    // Clean up after ourselves.
+    pen.println("");
+    
+ // testing Grid
+    pen.println("Grid:");
+    TBUtils.print(pen, new BoxedBlock(new Grid(7,3, '*')));
+    TBUtils.print(pen, new Grid(7,3,'*'));
+    pen.println("");
+    
+    // testing TruncatedBlock
+    pen.println("TruncatedBlock:");
+    TBUtils.print(pen, new TruncatedBlock(new Grid(7,3,'*'),6));
+    TextBlock tBlock = new TruncatedBlock(block2, 3);
+    TBUtils.print(pen, tBlock);
+    TBUtils.print(pen, block2);
+    pen.println("");
+    
+    // testing CenteredBlock
+    pen.println("CenteredBlock:");
+    TextBlock cBlock = new BoxedBlock(new CenteredBlock(block2, 11));
+    TextBlock cBlock1 = (new CenteredBlock(block2, 11));
+    TBUtils.print(pen, cBlock);
+    TBUtils.print(pen, cBlock1);
+    pen.println("");
+    
+    // testing RightJustified
+    pen.println("RightJustified: ");
+    TextBlock rjBlock = new BoxedBlock(new RightJustified(block2, 11));
+    TBUtils.print(pen, rjBlock);
+    
+    // testing BlockPair
+    pen.println("BlockPair: ");
+    TextBlock bpBlock = new BlockPair(block);
+    TextBlock bpBlock1 = new BlockPair(block1);
+    TextBlock bpBlock2 = new BlockPair(block2);
+    TBUtils.print(pen, bpBlock);
+    TBUtils.print(pen, bpBlock1);
+    TBUtils.print(pen, bpBlock2);
+    
     pen.close();
   } // main(String[])
 } // class TBExpt

@@ -9,10 +9,16 @@ package edu.grinnell.csc207.mauckchi.layout;
 public class TruncatedBlock
     implements TextBlock
 {
+  //+--------+------------------------------------------------------------
+  // | Fields |
+  // +--------+
   int width;
   int height;
   TextBlock contents;
 
+  //+--------------+------------------------------------------------------
+  // | Constructors |
+  // +--------------+
   /**
    * Create a new truncated block of the specified width.
    *
@@ -26,6 +32,10 @@ public class TruncatedBlock
     this.contents = tb;
   } // TruncatedBlock(TextBlock, int)
 
+  
+  //+---------+-----------------------------------------------------------
+  // | Methods |
+  // +---------+
   /**
    * Get the ith row of the block.
    */

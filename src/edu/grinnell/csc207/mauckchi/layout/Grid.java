@@ -1,7 +1,5 @@
 package edu.grinnell.csc207.mauckchi.layout;
 
-import java.io.PrintWriter;
-
 /**
  * A w-by-h grid of a single character
  * 
@@ -10,10 +8,16 @@ import java.io.PrintWriter;
 public class Grid
     implements TextBlock
 {
+  //+--------+------------------------------------------------------------
+  // | Fields |
+  // +--------+
   int width;
   int height;
   char character;
 
+  //+--------------+------------------------------------------------------
+  // | Constructors |
+  // +--------------+
   /**
    * Build a new grid
    */
@@ -32,6 +36,9 @@ public class Grid
     return this.height;
   } // height()
 
+  //+---------+-----------------------------------------------------------
+  // | Methods |
+  // +---------+
   /**
    * Determine how many columns are in the grid.
    */
@@ -61,10 +68,4 @@ public class Grid
       } // else
   } // row(int)
   
-  public static void main(String[] args)
-  {
-    PrintWriter pen = new PrintWriter(System.out, true);
-    TBUtils.print(pen, new BoxedBlock(new Grid(7,3, '*')));
-    TBUtils.print(pen, new Grid(7,3,'*'));
-  }
 } // class Grid

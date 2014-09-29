@@ -9,22 +9,49 @@ package edu.grinnell.csc207.mauckchi.layout;
 public class CenteredBlock
     implements TextBlock
 {
+  //+--------+------------------------------------------------------------
+  // | Fields |
+  // +--------+
+  int width;
+  int height;
+  // the width in which the text block is centered
+  int boxWidth;
+  TextBlock contents;
+  
+  //+--------------+------------------------------------------------------
+  // | Constructors |
+  // +--------------+
+ /**
   /**
    * Create a new CenteredBlock in a box of the specified width.
    * @param tb
    * @param width
    */
   CenteredBlock(TextBlock tb, int width)
+  throws Exception
   {
-    // STUB
+    if (width < tb.width())
+      {
+        throw new Exception("Invalid width");
+      } // if
+    else
+      {
+        this.width = width;
+        this.height = tb.height();
+        this.boxWidth = tb.width();
+        this.contents = tb;
+      } // else
   } // CenteredBlock(TextBlock, int)
   
+  //+---------+-----------------------------------------------------------
+  // | Methods |
+  // +---------+
   /**
    * Determine how many rows are in the block.
    */
   public int height()
   {
-    // STUB
+    return this.height;
   } // height()
   
   /**
@@ -32,14 +59,24 @@ public class CenteredBlock
    */
   public int width()
   {
-    // STUB
+    return this.width;
   } // width()
   
   /**
    * Get the ith row of the block.
    */
   public String row(int i)
+  throws Exception
   {
-    // STUB
+    if ((i >= 0) && (i <= this.height))
+      {
+        return TBUtils.spaces((this.width - this.boxWidth) / 2) + 
+            this.contents.row(i) + 
+            TBUtils.spaces((this.width - this.boxWidth) / 2);
+      } // if
+    else
+      {
+        throw new Exception("Invalid row");
+      } // else
   } // row(int)
 } // class CenteredBlock
