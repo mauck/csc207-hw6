@@ -30,21 +30,36 @@ public class NonFood
   //+---------+-----------------------------------------------------------
   // | Methods |
   // +---------+
+  /**
+   * Produce a string of the NonFood item's name
+   */
   public String toString()
   {
     return this.name;
   } // toString()
 
+  /**
+   * Get the weight
+   */
   public Weight getWeight()
   {
     return this.weight;
   } // getWeight()
 
+  /**
+   * Get the price
+   */
   public int getPrice()
   {
     return this.price;
   } // getPrice()
 
+  /**
+   * Check to see if this and another NonFood item have equal fields
+   * 
+   * @param other
+   * @return
+   */
   public boolean equals(NonFood other)
   {
     return this.name.equals(other.name) &&
@@ -52,19 +67,22 @@ public class NonFood
            this.price == other.price;
   } // equals(NonFood)
   
+  /**
+   * Check to see if this and another object are equal
+   */
   public boolean equals(Object obj)
   {
     if (this == obj)
       {
         return true;
-      } // if
+      } // if object share same memory location
     else if (obj instanceof NonFood)
       {
         return this.equals(obj);
-      } // else if
+      } // else if object is NonFood
     else
       {
         return false;
       } // else
   } // equals(Object)
-} // clas NonFood
+} // class NonFood

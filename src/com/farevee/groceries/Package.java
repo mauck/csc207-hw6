@@ -30,21 +30,36 @@ public class Package
   //+---------+-----------------------------------------------------------
   // | Methods |
   // +---------+
+  /**
+   * Produce a string of the weight and name of the package
+   */
   public String toString()
   {
     return this.weight.amount + " " + this.weight.unit.abbrev + " package " + " of " + name;
   } // toString()
 
+  /**
+   * Get the weight
+   */
   public Weight getWeight()
   {
     return this.weight;
   } // getWeight()
 
+  /**
+   * Get the price
+   */
   public int getPrice()
   {
     return this.price;
   } // getPrice()
 
+  /**
+   * Check to see if this and another Package have equal fields
+   * 
+   * @param other
+   * @return
+   */
   public boolean equals(Package other)
   {
     return this.name.equals(other.name) &&
@@ -52,16 +67,19 @@ public class Package
            this.price == other.price;
   } // equals(Package)
   
+  /**
+   * Check to see if this and another object are equal
+   */
   public boolean equals(Object obj)
   {
     if (this == obj)
       {
         return true;
-      } // if
+      } // if objects share memory location
     else if (obj instanceof Package)
       {
         return this.equals(obj);
-      } // else if
+      } // else if object is Package
     else
       {
         return false;

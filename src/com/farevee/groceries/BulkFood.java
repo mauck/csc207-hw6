@@ -32,6 +32,9 @@ public class BulkFood
   //+---------+-----------------------------------------------------------
   // | Methods |
   // +---------+
+  /**
+   * Produce a string of the BulkFood's name
+   */
   public String toString()
   {
     return this.name;
