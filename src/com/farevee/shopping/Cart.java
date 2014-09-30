@@ -15,7 +15,7 @@ import com.farevee.groceries.Weight;
 
 public class Cart
 {
-//+--------+------------------------------------------------------------
+  //+--------+------------------------------------------------------------
   // | Fields |
   // +--------+
   ArrayList<Item> cart;
@@ -26,7 +26,7 @@ public class Cart
   int numOunces;
   int numKilograms;
   int numGrams;
-  
+
   //+--------------+------------------------------------------------------
   // | Constructors |
   // +--------------+
@@ -44,8 +44,7 @@ public class Cart
     this.numKilograms = 0;
     this.numGrams = 0;
   } // Cart()
-  
-  
+
   //+---------+-----------------------------------------------------------
   // | Methods |
   // +---------+
@@ -190,6 +189,7 @@ public class Cart
               {
                 if (item1.equals(item2))
                   {
+                    things--;
                     cart.set(i, new ManyPackages((Package) item1, 2));
                     cart.remove(j);
                     entries--;
@@ -200,6 +200,9 @@ public class Cart
               {
                 if (item1.equals(item2))
                   {
+                    things -=
+                        (((ManyPackages) item1).getCount()
+                         + ((ManyPackages) item2).getCount() - 1);
                     cart.set(i,
                              new ManyPackages(
                                               ((ManyPackages) item1).getType(),
@@ -213,6 +216,7 @@ public class Cart
               {
                 if (item1.equals(item2))
                   {
+                    things -= ((ManyPackages)item1).getCount();
                     cart.set(i,
                              new ManyPackages(
                                               ((ManyPackages) item1).getType(),
@@ -225,6 +229,7 @@ public class Cart
               {
                 if (item1.equals(item2))
                   {
+                    things -= ((ManyPackages)item2).getCount();
                     cart.set(i,
                              new ManyPackages(
                                               ((ManyPackages) item2).getType(),
@@ -237,6 +242,7 @@ public class Cart
               {
                 if (item1.equals(item2))
                   {
+                    things--;
                     cart.set(i,
                              new BulkItem(((BulkItem) item1).getFood(),
                                           ((BulkItem) item1).getUnit(),
