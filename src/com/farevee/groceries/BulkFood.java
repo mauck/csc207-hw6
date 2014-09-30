@@ -40,5 +40,14 @@ public class BulkFood
     return this.name;
   } // toString()
   
+  /**
+   * Decrement supply by an amount
+   * 
+   * @param amount
+   */
+  public void decrementSupply(int amount)
+  {
+    this.supply -= amount;
+  } // decrementSupply(int)
   
 } // class BulkFood
