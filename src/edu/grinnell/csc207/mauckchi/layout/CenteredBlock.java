@@ -17,18 +17,18 @@ public class CenteredBlock
   // the width in which the text block is centered
   int boxWidth;
   TextBlock contents;
-  
+
   //+--------------+------------------------------------------------------
   // | Constructors |
   // +--------------+
- /**
   /**
-   * Create a new CenteredBlock in a box of the specified width.
-   * @param tb
-   * @param width
-   */
-  CenteredBlock(TextBlock tb, int width)
-  throws Exception
+   /**
+    * Create a new CenteredBlock in a box of the specified width.
+    * 
+    * @param tb
+    * @param width
+    */
+  CenteredBlock(TextBlock tb, int width) throws Exception
   {
     if (width < tb.width())
       {
@@ -42,7 +42,7 @@ public class CenteredBlock
         this.contents = tb;
       } // else
   } // CenteredBlock(TextBlock, int)
-  
+
   //+---------+-----------------------------------------------------------
   // | Methods |
   // +---------+
@@ -53,7 +53,7 @@ public class CenteredBlock
   {
     return this.height;
   } // height()
-  
+
   /**
    * Determine how many columns are in the block.
    */
@@ -61,18 +61,18 @@ public class CenteredBlock
   {
     return this.width;
   } // width()
-  
+
   /**
    * Get the ith row of the block.
    */
   public String row(int i)
-  throws Exception
+    throws Exception
   {
     if ((i >= 0) && (i <= this.height))
       {
-        return TBUtils.spaces((this.width - this.boxWidth) / 2) + 
-            this.contents.row(i) + 
-            TBUtils.spaces((this.width - this.boxWidth) / 2);
+        return TBUtils.spaces((this.width - this.boxWidth) / 2)
+               + this.contents.row(i)
+               + TBUtils.spaces((this.width - this.boxWidth) / 2);
       } // if
     else
       {

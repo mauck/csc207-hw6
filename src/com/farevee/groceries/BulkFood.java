@@ -9,7 +9,7 @@ public class BulkFood
   Units unit;
   int pricePerUnit;
   int supply;
-  
+
   //+--------------+------------------------------------------------------
   // | Constructors |
   // +--------------+
@@ -28,7 +28,7 @@ public class BulkFood
     this.pricePerUnit = pricePerUnit;
     this.supply = supply;
   } // BulkFood(String, Units, int, int)
-  
+
   //+---------+-----------------------------------------------------------
   // | Methods |
   // +---------+
@@ -39,9 +39,9 @@ public class BulkFood
   {
     return this.name;
   } // toString()
-  
+
   /**
-   * Decrement supply by an amount
+   * Decrement supply by a specified amount
    * 
    * @param amount
    */
@@ -49,5 +49,5 @@ public class BulkFood
   {
     this.supply -= amount;
   } // decrementSupply(int)
-  
+
 } // class BulkFood

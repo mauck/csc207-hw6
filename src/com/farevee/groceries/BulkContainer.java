@@ -57,9 +57,10 @@ public class BulkContainer
     if (this == obj)
       {
         return true;
-      } // if object share memory location
+      } // if objects share memory location
     else if (obj instanceof BulkContainer)
       {
+        // use BulkContainer equals method
         return this.equals(obj);
       } // else if object is BulkContainer
     else

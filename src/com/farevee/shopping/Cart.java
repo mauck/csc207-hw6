@@ -216,7 +216,7 @@ public class Cart
               {
                 if (item1.equals(item2))
                   {
-                    things -= ((ManyPackages)item1).getCount();
+                    things -= ((ManyPackages) item1).getCount();
                     cart.set(i,
                              new ManyPackages(
                                               ((ManyPackages) item1).getType(),
@@ -229,7 +229,7 @@ public class Cart
               {
                 if (item1.equals(item2))
                   {
-                    things -= ((ManyPackages)item2).getCount();
+                    things -= ((ManyPackages) item2).getCount();
                     cart.set(i,
                              new ManyPackages(
                                               ((ManyPackages) item2).getType(),

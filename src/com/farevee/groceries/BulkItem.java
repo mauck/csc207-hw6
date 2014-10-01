@@ -109,6 +109,7 @@ public class BulkItem
       } // if object share memory location
     else if (obj instanceof BulkItem)
       {
+        // use BulkItem equals method
         return this.equals(obj);    
       } // else if object is BulkItem
     else

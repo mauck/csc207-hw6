@@ -27,7 +27,7 @@ public class BoxedBlock
   {
     this.contents = _contents;
   } // BoxedBlock(String)
-  
+
   // +---------+-----------------------------------------------------------
   // | Methods |
   // +---------+

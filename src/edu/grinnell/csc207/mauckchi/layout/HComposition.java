@@ -33,6 +33,7 @@ public class HComposition
     this.right = right;
   } // HComposition(String)
     // +---------+-----------------------------------------------------------
+
   // | Methods |
   // +---------+
 

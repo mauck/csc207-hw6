@@ -69,7 +69,7 @@ public class RightJustified
     if ((i >= 0) && (i <= this.height))
       {
         return TBUtils.spaces(this.width - this.contents.row(i).length())
-                              + this.contents.row(i);
+               + this.contents.row(i);
       } // if
     else
       {

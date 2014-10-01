@@ -54,18 +54,21 @@ public class Grid
    * @exception Exception
    * if the row number is invalid.
    */
+  // I got the idea for using replace to make the grid rows from
+  // http://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string-in-java
   public String row(int i)
-  // try StringUtils.repeat -- need to download something...
+    // try StringUtils.repeat -- need to download something...
     throws Exception
   {
     if ((i >= 0) && (i <= this.height))
       {
-        return new String(new char[this.width]).replace("\0",String.valueOf(this.character));
+        return new String(new char[this.width]).replace("\0",
+                                                        String.valueOf(this.character));
       } // if
     else
       {
         throw new Exception("Invalid row " + i);
       } // else
   } // row(int)
-  
+
 } // class Grid

@@ -60,10 +60,16 @@ public class Package
    * @param other
    * @return
    */
+  
+  // My equals method wasn't working originally because I was comparing
+  // Weights, when I actually needed to compare the two fields of the
+  // Weights. I realized this thanks to Patrick Slough's version of the
+  // method: https://github.com/pslough93/Assignment6/blob/master/src/com/farevee/groceries/Package.java
   public boolean equals(Package other)
   {
     return this.name.equals(other.name) &&
-           this.weight.equals(other.weight) &&
+           this.weight.getAmount() == (other.weight.getAmount()) &&
+           this.weight.getUnit().equals(other.weight.getUnit()) &&
            this.price == other.price;
   } // equals(Package)
   
@@ -78,11 +84,12 @@ public class Package
       } // if objects share memory location
     else if (obj instanceof Package)
       {
-        return this.equals(obj);
+        // use Package equals method
+        return this.equals((Package) obj);
       } // else if object is Package
     else
       {
         return false;
       } // else
   } // equals(Object)
-} // clas Package
+} // class Package

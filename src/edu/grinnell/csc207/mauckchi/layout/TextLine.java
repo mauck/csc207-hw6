@@ -69,6 +69,6 @@ public class TextLine
    */
   public void setContents(String newContents)
   {
-    // STUB
+    this.line = newContents;
   }
 } // class TextLine

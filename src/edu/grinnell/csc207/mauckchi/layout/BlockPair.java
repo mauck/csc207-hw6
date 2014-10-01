@@ -55,7 +55,7 @@ public class BlockPair
    * Get the ith row of the block.
    */
   public String row(int i)
-  throws Exception
+    throws Exception
   {
     if ((i >= 0) && (i <= this.height))
       {

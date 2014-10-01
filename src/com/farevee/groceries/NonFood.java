@@ -63,7 +63,8 @@ public class NonFood
   public boolean equals(NonFood other)
   {
     return this.name.equals(other.name) &&
-           this.weight.equals(other.weight) &&
+           this.weight.getAmount() == (other.weight.getAmount()) &&
+           this.weight.getUnit().equals(other.weight.getUnit()) &&
            this.price == other.price;
   } // equals(NonFood)
   
@@ -78,6 +79,7 @@ public class NonFood
       } // if object share same memory location
     else if (obj instanceof NonFood)
       {
+        // use NonFood equals method
         return this.equals(obj);
       } // else if object is NonFood
     else
